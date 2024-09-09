@@ -9,6 +9,7 @@ import static org.junit.Assert.assertEquals;
 public class BunTest {
     private final String bunName;
     private final float bunPrice;
+    private final float delta = 0.00001f;
 
     public BunTest( String bunName, float bunPrice) {
         this.bunName = bunName;
@@ -28,13 +29,13 @@ public class BunTest {
     public void createBun() {
         Bun bun = new Bun(bunName, bunPrice);
         assertEquals(bunName, bun.name);
-        assertEquals(bunPrice, bun.price, .4);
+        assertEquals(bunPrice, bun.price, delta);
     }
 
     @Test
     public void getPriceTest() {
         Bun bun = new Bun(bunName, bunPrice);
-        assertEquals("Expected same price", bunPrice, bun.getPrice(), .4);
+        assertEquals("Expected same price", bunPrice, bun.getPrice(), delta);
     }
 
     @Test

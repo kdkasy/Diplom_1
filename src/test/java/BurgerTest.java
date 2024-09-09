@@ -28,6 +28,8 @@ public class BurgerTest {
     @Mock
     private Ingredient ingredientMockBurger3;
 
+    private final float delta = 0.00001f;
+
     @Before
     public void createSimpleBurger() {
         burger = new Burger();
@@ -44,7 +46,7 @@ public class BurgerTest {
         when(ingredientMockBurger2.getPrice()).thenReturn(10f);
         when(bun.getPrice()).thenReturn(5f);
 
-        assertEquals(25 ,burger.getPrice(), .5);
+        assertEquals(25 ,burger.getPrice(), delta);
     }
 
     @Test
